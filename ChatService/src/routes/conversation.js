@@ -1,9 +1,11 @@
 const router = require("express").Router();
-// const { user_auth } = require("../middleWares/auth");
 const Conversation = require("../models/chat/conversation");
+const user_auth = require("../middleWares/auth");
+const { role_auth } = require("../controllers/auth");
+const roles = require("../controllers/roles");
 
 /* Creating a new conversation between two users. */
-router.post("/create", async (req, res) => {
+router.post("/create", user_auth, async (req, res) => {
   const newConversation = new Conversation({
     members: [req.body.senderId, req.body.receiverId],
   });
@@ -19,7 +21,7 @@ router.post("/create", async (req, res) => {
 });
 
 /* Finding all the conversations that the user is a member of. */
-router.get("/:userId", async (req, res) => {
+router.get("/:userId", user_auth, async (req, res) => {
   try {
     const conversation = await Conversation.find({
       members: { $in: req.params.userId },
