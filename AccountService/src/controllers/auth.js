@@ -10,6 +10,7 @@ const PreviousExperience = require("../models/userDetails/PreviousExperience");
 const verifyRequest = require("../models/userDetails/verifyRequest");
 const { addVerifyRequiresToAdmin } = require("../controllers/admin_auth");
 const axios = require("axios");
+const Security = require("../models/security_Question/Security");
 
 /**
  * Register Users
@@ -187,12 +188,12 @@ const update_user = async (id, _user, res) => {
         success: false,
       });
     }
-    if (_user.profilePicture == null || _user.profilePicture == "") {
-      return res.status(400).json({
-        message: "Enter profile picture",
-        success: false,
-      });
-    }
+    // if (_user.profilePicture == null || _user.profilePicture == "") {
+    //   return res.status(400).json({
+    //     message: "Enter profile picture",
+    //     success: false,
+    //   });
+    // }
 
     user.role = _user.role || user.role;
     user.email = _user.email || user.email;
@@ -249,6 +250,169 @@ const change_password = async (id, old_password, new_password, res) => {
         message: `Password updated successfully.`,
         success: true,
       });
+    }
+  } catch (e) {
+    console.log(e);
+    return res.status(500).json({
+      message: `unable to change your password.`,
+      success: false,
+    });
+    // TODO Logging with winston
+  }
+};
+
+/**
+ * It takes in an object with the user's full name, email, new password, and response object. It then
+ * checks if the user exists, and if the full name and email match. If they do, it hashes the new
+ * password and saves it to the database.
+ * </code>
+ *
+ *
+ * A:
+ *
+ * You can use <code>bcrypt.compare</code> to compare the password.
+ * <code>const bcrypt = require('bcrypt');
+ *
+ * const isPasswordValid = async (password, hash) =&gt; {
+ *   return await bcrypt.compare(password, hash);
+ * };
+ * </code>
+ * @returns a promise.
+ */
+// const forgotPassword = async ({ isFullName, isEmail, new_password, res }) => {
+//   // TODO Check password strength
+//   try {
+//     const user = await User.findOne({ email: isEmail }).exec();
+//     if (user) {
+//       const { fullName, email } = user._doc;
+//       if (fullName === isFullName && email === isEmail) {
+//         user.password = await bcrypt.hash(new_password, 12);
+//         await user.save();
+//         payload = {
+//           id: user.id,
+//         };
+//         return res.status(200).json({
+//           message: `Password has Successfully changed.`,
+//           success: true,
+//           payload: payload,
+//         });
+//       } else {
+//         res.status(400).json({
+//           message: "Wrong Credential",
+//           success: false,
+//         });
+//       }
+//     } else {
+//       res.status(404).json({
+//         message: "Not Found ",
+//         success: false,
+//       });
+//     }
+//   } catch (e) {
+//     console.log(e);
+//     return res.status(500).json({
+//       message: `unable to change your password.`,
+//       success: false,
+//     });
+//     // TODO Logging with winston
+//   }
+// };
+// const forgotPassword = async ({ isFullName, isEmail, isPhoneNumber, res }) => {
+//   try {
+//     const user = await User.findOne({ email: isEmail }).exec();
+//     if (user) {
+//       const { fullName, phoneNumber } = user._doc;
+//       if (fullName === isFullName && phoneNumber === isPhoneNumber) {
+//         // user.password = await bcrypt.hash(new_password, 12);
+//         // await user.save();
+//         const userInfo = {
+//           id: user.id,
+//         };
+//         await payload(userInfo);
+//         return res.status(200).json({
+//           message: `Successful.`,
+//           success: true,
+//           userInfo: userInfo,
+//         });
+//       } else {
+//         res.status(400).json({
+//           message: "Wrong Credential",
+//           success: false,
+//         });
+//       }
+//     } else {
+//       res.status(404).json({
+//         message: "Not Found ",
+//         success: false,
+//       });
+//     }
+//   } catch (e) {
+//     console.log(e);
+//     return res.status(500).json({
+//       message: `unable to send your request.`,
+//       success: false,
+//     });
+//     // TODO Logging with winston
+//   }
+// };
+
+/**
+ * It checks if the user's security question is correct, if it is, it changes the user's password.
+ * </code>
+ * @returns {
+ *   "message": "wrong credential or Wrong Security Answer ",
+ *   "success": false
+ * }
+ * </code>
+ */
+
+const checkSecurityQuestion = async ({
+  isFullName,
+  isEmail,
+  isPhoneNumber,
+  _question,
+  new_password,
+  res,
+}) => {
+  // TODO Check password strength
+  try {
+    const user = await User.findOne({ email: isEmail }).exec();
+    if (user) {
+      const { _id, fullName, phoneNumber, securityQuestion } = user._doc;
+
+      if (fullName === isFullName && phoneNumber === isPhoneNumber) {
+        // const isId = securityQuestion.id;
+        const question = await Security.findOne({ user: _id }).exec();
+
+        if (question) {
+          const { favoritePlace, childhoodMemory, mother_Maiden_Name } =
+            question._doc;
+
+          if (
+            _question.favoritePlace === favoritePlace &&
+            _question.childhoodMemory === childhoodMemory &&
+            _question.mother_Maiden_Name === mother_Maiden_Name
+          ) {
+            user.password = await bcrypt.hash(new_password, 12);
+            await user.save();
+
+            return res.status(200).json({
+              message: `Successful.`,
+              success: true,
+            });
+          } else {
+            res.status(404).json({
+              message: "wrong credential or Wrong Security Answer ",
+              success: false,
+            });
+          }
+        }
+      } else {
+        res.status(404).json({
+          message: "wrong credential",
+          success: false,
+        });
+      }
     }
   } catch (e) {
     console.log(e);
@@ -464,6 +628,15 @@ const addReportToUser = async (reporter_id, report_Id) => {
     { new: true }
   ).exec();
 };
+const addSecurityQuestionToUser = async ({ user_id, questionId }) => {
+  return await User.findByIdAndUpdate(
+    user_id,
+    {
+      $push: { securityQuestion: questionId },
+    },
+    { new: true }
+  ).exec();
+};
 
 /**
  * It's a function that takes a user object and a response object as parameters and returns a response
@@ -568,4 +741,6 @@ module.exports = {
   RemoveJobPostIdFromUser,
   addJobPostToUser,
   SubscribeEvent,
+  addSecurityQuestionToUser,
+  checkSecurityQuestion,
 };

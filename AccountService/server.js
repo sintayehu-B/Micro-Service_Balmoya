@@ -26,6 +26,7 @@ const report = require("./src/routes/reports");
 const verifyRequest = require("./src/routes/verifyRequest");
 const reportResponse = require("./src/routes/reportResponse");
 const resumeBuilder = require("./src/routes/resumeBuilder");
+const securityQuestion = require("./src/routes/securityQuestion");
 
 app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -58,6 +59,7 @@ app.use("/employee/educationalBackground", userEducationalBackgroundRoute);
 app.use("/employee/reference", userReferenceRoute);
 app.use("/employee/profession", userProfessionRoute);
 app.use("/employee/resumeBuilder", resumeBuilder);
+app.use("/employee/securityQuestion", securityQuestion);
 
 app.listen(5655, () => {
   console.log("Account Service is up and running!");

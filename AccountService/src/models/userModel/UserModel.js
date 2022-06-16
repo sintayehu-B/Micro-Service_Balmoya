@@ -94,6 +94,10 @@ const mongoose = require("mongoose"),
           ref: "PreviousExperience",
         },
       ],
+      securityQuestion: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "SecurityQuestion",
+      },
       /* A reference to the EducationBackgrounds model. */
       // many to many relationship with educationalBackground
       educationalBackground: [

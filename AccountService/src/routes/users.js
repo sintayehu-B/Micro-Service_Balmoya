@@ -53,6 +53,7 @@ router.get(
         .populate("notification")
         .populate("report_Id")
         .populate("profilePicture")
+        .populate("securityQuestion")
         .exec()
     );
   }
