@@ -108,9 +108,37 @@ router.delete(
   }
 );
 
+/* This is a post request to search for a job post. */
+router.post("/search", async (req, res) => {
+  const query = req.body.query;
+  // Array
+  const jobType = req.body.jobType;
+  // add location
+  /* This is a post request to search for a job post. */
+  try {
+    let posts = await JobPost.find().exec();
+    posts = posts.filter((e) => {
+      if (
+        jobType.includes(e.jobType) ||
+        e.jobTitle.includes(query) ||
+        e.companyName.includes(query) ||
+        e.description.includes(query) ||
+        e.location.includes(query) ||
+        e.salary.includes(query)
+      ) {
+        return true;
+      }
+      return false;
+    });
+    res.status(200).json(posts);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 // Get Post
 /* This is a get request to get a single post. */
-router.get("/:id", async (req, res) => {
+router.get("/singlePost/:id", user_auth, async (req, res) => {
   try {
     const post = await JobPost.findById(req.params.id)
       .populate("jopAppliedUsers")
@@ -121,9 +149,24 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/postedBy/:id", async (req, res) => {
+// router.get("/postedBy/:id", async (req, res) => {
+//   try {
+//     const post = await JobPost.findById(req.params.id)
+//       .populate("jopAppliedUsers")
+//       .exec();
+
+//     // const { postedBy } = post._doc;
+//     res.status(200).json(post);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+/* This is a get request to get all the posts. */
+router.get("/showJobPosted/byUser", user_auth, async (req, res) => {
   try {
-    const post = await JobPost.findById(req.params.id)
+    const id = req.user.id;
+    const post = await JobPost.findOne({ postedBy: id })
       .populate("jopAppliedUsers")
       .exec();
 
@@ -136,51 +179,23 @@ router.get("/postedBy/:id", async (req, res) => {
 
 // Get all posts
 /* This is a get request to get all the posts. */
-router.get("/", user_auth, async (req, res) => {
-  const companyName = req.query.company;
-  const tag = req.query.tag;
-  const jobType = req.query.jobType;
-  const location = req.query.location;
-  const salary = req.query.salary;
-  // add location
-  try {
-    let posts;
-    if (companyName) {
-      posts = await JobPost.find({ companyName });
-    } else if (tag) {
-      posts = await JobPost.find({
-        tag: {
-          $in: [tag],
-        },
-      });
-    } else if (jobType) {
-      posts = await JobPost.find({
-        jobType,
-      });
-    } else if (location) {
-      posts = await JobPost.find({
-        location,
-      });
-    } else if (salary) {
-      posts = await JobPost.find({
-        salary,
-      });
-    } else {
-      posts = await JobPost.find();
-    }
-    res.status(200).json(posts);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
-// router.get("/", async (req, res) => {
+// router.get("/appliedUser", async (req, res) => {
 //   try {
-//     const post = await JobApplied.find().populate("jobPost").exec();
+//     const post = await Job.find().populate("jopAppliedUsers").exec();
 //     res.status(200).json(post);
 //   } catch (err) {
 //     res.status(500).json({ message: "server error", err, err });
 //   }
 // });
 
+/* This is a get request to get all the posts. */
+router.get("/", user_auth, async (req, res) => {
+  try {
+    const post = await JobPost.find().exec();
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

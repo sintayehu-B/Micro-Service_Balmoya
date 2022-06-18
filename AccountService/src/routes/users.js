@@ -111,7 +111,7 @@ router.put(
 
 /* This is a route that is used to get the profile of the user. */
 
-router.get("/friendsId", async (req, res) => {
+router.post("/friendsId", async (req, res) => {
   const user_id = req.query.user_id;
   const fullName = req.query.fullName;
   try {

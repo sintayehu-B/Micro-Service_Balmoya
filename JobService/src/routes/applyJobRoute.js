@@ -61,7 +61,7 @@ router.post(
 router.get(
   "/:id",
   user_auth,
-  role_auth([roles.EMPLOYEE, roles.ADMIN]),
+  role_auth([roles.EMPLOYER, roles.ADMIN]),
   async (req, res) => {
     try {
       const post = await JobApplied.findById(req.params.id)

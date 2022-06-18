@@ -90,14 +90,6 @@ router.patch(
   }
 );
 
-// router.put("/forgot-Password", async (req, res, next) => {
-//   return await forgotPassword({
-//     isFullName: req.body.fullName,
-//     isEmail: req.body.email,
-//     new_password: req.body.new_password,
-//     res: res,
-//   });
-// });
 router.patch("/forgot-Password", async (req, res, next) => {
   return await checkSecurityQuestion({
     _question: req.body,
@@ -108,32 +100,5 @@ router.patch("/forgot-Password", async (req, res, next) => {
     res: res,
   });
 });
-
-// router.get("/forgot-password/securityQuestion", async (req, res) => {
-//   try {
-//     // const user = await User.findById(req.body.user).populate().exec();
-//     // const { password, ...others } = user._doc;
-//     // res.status(200).json({ others: others, success: true });
-//   } catch (err) {
-//     res.status(404).json("no user is found", err);
-//   }
-// });
-
-// router.delete("/:id", user_auth, async (req, res, next) => {
-//   try {
-//     let x = await Reviews.deleteOne({ _id: req.user._id });
-//     console.log(x);
-//     return res.status(200).json({
-//       message: "Deleted successfully.",
-//       success: true,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     return res.status(500).json({
-//       message: "Error deleting.",
-//       success: false,
-//     });
-//   }
-// });
 
 module.exports = router;

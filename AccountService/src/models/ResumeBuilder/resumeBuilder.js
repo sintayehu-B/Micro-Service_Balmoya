@@ -5,6 +5,9 @@ const ResumeBuilderSchema = new mongoose.Schema({
     required: false,
     unique: true,
   },
+  description: {
+    type: String,
+  },
   experience: {
     type: String,
     required: false,

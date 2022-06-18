@@ -143,6 +143,17 @@ router.get("/users", user_auth, role_auth([roles.ADMIN]), async (req, res) => {
   }
 });
 /* Deleting the user. */
+
+/* This is a route that is used to delete the user. */
+router.delete(
+  "/delete/user",
+  user_auth,
+  role_auth([roles.ADMIN]),
+  async (req, res) => {
+    return await delete_users(req.body.user, res);
+  }
+);
+
 router.delete("/:id", user_auth, async (req, res, next) => {
   try {
     let x = await Admin.deleteOne({ _id: req.user._id });
@@ -159,15 +170,4 @@ router.delete("/:id", user_auth, async (req, res, next) => {
     });
   }
 });
-
-/* This is a route that is used to delete the user. */
-router.delete(
-  "/delete/user",
-  user_auth,
-  role_auth([roles.ADMIN]),
-  async (req, res) => {
-    return await delete_users(req.body.user, res);
-  }
-);
-
 module.exports = router;

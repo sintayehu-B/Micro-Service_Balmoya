@@ -14,16 +14,11 @@ const {
 const { addReportToAdmin, getID } = require("../controllers/admin_auth");
 /* Importing the roles from the roles.js file. */
 const roles = require("../controllers/roles");
-// const UserModel = require("../models/userModel/UserModel");
+const UserModel = require("../models/userModel/UserModel");
 
-// router.get(
-//   "/reports",
-//   user_auth,
-//   role_auth([roles.EMPLOYEE, roles.EMPLOYER]),
-//   async (req, res) => {
-//     return res.json(await Report.find({ report_Id: UserModel.report_Id }));
-//   }
-// );
+router.get("/reports", user_auth, async (req, res) => {
+  return res.json(await Report.find({ report_Id: UserModel.report_Id }));
+});
 
 router.post(
   "/create",
