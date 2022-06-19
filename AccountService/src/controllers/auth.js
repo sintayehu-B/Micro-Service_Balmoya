@@ -115,7 +115,7 @@ const user_login = async (user_creds, res) => {
     let result = {
       id: user._id,
       fullName: user.fullName,
-      // role: user.role,
+      role: user.role,
       email: user.email,
       token: `${token}`,
       expiryDate: moment().add(200, "hours"),

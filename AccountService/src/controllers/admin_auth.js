@@ -103,6 +103,7 @@ const user_login = async (admin_creds, res) => {
     let result = {
       _id: user.id,
       name: user.name,
+      role: user.role,
       email: user.email,
       token: `${token}`,
       expiryDate: moment().add(200, "hours"),
