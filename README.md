@@ -80,127 +80,127 @@ Balemoya
 
 #### Organization
 
-<img src="/screenShots/Registre_Company.PNG" width="210">
+<img src="/screenShots/Registre_Company.PNG" width="500">
 
 #### individual
 
-<img src="/screenShots/Register_Individual.PNG" width="210">
+<img src="/screenShots/Register_Individual.PNG" width="500">
 
 ### Login
 
 #### Individual
 
-<img src="/screenShots/login-empolyee.PNG" width="210">
+<img src="/screenShots/login-empolyee.PNG" width="500">
 
 ##### Update Individual Profile
 
 - In This profile I am show the password because am trying to show that the password are hashed.
-  <img src="/screenShots/profile.PNG" width="210">
+  <img src="/screenShots/profile.PNG" width="500">
 
 ##### Update changePassword
 
-<img src="/screenShots/ChangePassword_employer.PNG" width="210">
+<img src="/screenShots/ChangePassword_employer.PNG" width="500">
 
 ##### ApplyJob
 
-<img src="/screenShots/apply.PNG" width="210">
+<img src="/screenShots/apply.PNG" width="500">
 
 ##### PerviousExperience
 
-<img src="/screenShots/previous experience.PNG" width="210">
+<img src="/screenShots/previous experience.PNG" width="500">
 
 ##### EducationalBackground
 
-<img src="/screenShots/educationbackground.PNG" width="210">
+<img src="/screenShots/educationbackground.PNG" width="500">
 
 ##### Reference
 
-<img src="/screenShots/reference.PNG" width="210">
+<img src="/screenShots/reference.PNG" width="500">
 ##### Profession
-<img src="/screenShots/profession.PNG" width="210">
+<img src="/screenShots/profession.PNG" width="500">
 
 ##### Report-Users
 
-<img src="/screenShots/report.PNG" width="210">
+<img src="/screenShots/report.PNG" width="500">
 
 ##### Get-Verified
 
-<img src="/screenShots/get-verified.PNG" width="210">
+<img src="/screenShots/get-verified.PNG" width="500">
 
 ##### Reviews
 
-<img src="/screenShots/review.PNG" width="210">
+<img src="/screenShots/review.PNG" width="500">
 
 #### Organization
 
 ##### Update Organization Profile
 
-<img src="/screenShots/Profile_view_employer.PNG " width="210">
+<img src="/screenShots/Profile_view_employer.PNG " width="500">
 
 - In This profile I am show the password because am trying to show that the password are hashed.
 
 ##### Update changePassword
 
-<img src="/screenShots/ChangePassword_employer.PNG" width="210">
+<img src="/screenShots/ChangePassword_employer.PNG" width="500">
 
 ##### JobPost
 
-<img src="/screenShots/JobPosting_employer.PNG" width="210">
+<img src="/screenShots/JobPosting_employer.PNG" width="500">
 
 ###### Update JobPost
 
-<img src="/screenShots/updating_jobpost-employer.PNG" width="210">
+<img src="/screenShots/updating_jobpost-employer.PNG" width="500">
 
 ###### Delete JobPost
 
-<img src="/screenShots/deleting_jobPOost.PNG" width="210">
+<img src="/screenShots/deleting_jobPOost.PNG" width="500">
 
 ###### Get single JobPost by created user only
 
-<img src="/screenShots/getting_jobPost_off_logged in user.PNG" width="210">
+<img src="/screenShots/getting_jobPost_off_logged in user.PNG" width="500">
 
 #### conversation
 
-<img src="/screenShots/conversation.PNG" width="210">
+<img src="/screenShots/conversation.PNG" width="500">
 
 #### messaging
 
 - Sender
-  <img src="/screenShots/messageing between users.PNG" width="210">
+  <img src="/screenShots/messageing between users.PNG" width="500">
 
 - Responder
-  <img src="/screenShots/responder messager.PNG" width="210">
+  <img src="/screenShots/responder messager.PNG" width="500">
 
 ### Admin
 
 #### Get All Users
 
-<img src="/screenShots/get all user.PNG" width="210">
+<img src="/screenShots/get all user.PNG" width="500">
 
 #### Get All JobPosted
 
-<img src="/screenShots/getting all jobposted by id.PNG" width="210">
+<img src="/screenShots/getting all jobposted by id.PNG" width="500">
 
 #### Get ID JobPosted
 
-<img src="/screenShots/getting all jobposted by id.PNG" width="210">
+<img src="/screenShots/getting all jobposted by id.PNG" width="500">
 
 #### Banning User
 
-<img src="/screenShots/banning user.PNG" width="210">
+<img src="/screenShots/banning user.PNG" width="500">
 
 #### UnBanning User
 
-<img src="/screenShots/unbanning user.PNG" width="210">
+<img src="/screenShots/unbanning user.PNG" width="500">
 
 #### Delete User
 
-<img src="/screenShots/delete user.PNG" width="210">
+<img src="/screenShots/delete user.PNG" width="500">
 
 #### Verify user
 
-<img src="/screenShots/verify.PNG" width="210">
+<img src="/screenShots/verify.PNG" width="500">
 
 #### UnVerify User
 
-<img src="/screenShots/unverify.PNG" width="210">
+<img src="/screenShots/unverify.PNG" width="500">
