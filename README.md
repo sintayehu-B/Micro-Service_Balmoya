@@ -29,7 +29,7 @@ Balemoya
 - Start the projects : `npm start`
 
 * For the AccountService
-  ![](c:/Users/Fat-Albert/Pictures/AccountService.PNG)
+  <>
 
 * For the ChatService
   ![](c:/Users/Fat-Albert/Pictures/ChatService.PNG)
@@ -46,7 +46,9 @@ Balemoya
 
 ## Reference
 
--[1] For Code that got as error we fixed it in the website by asking question and see asked question answers : `https://stackoverflow.com/` -[2] for any dependencies installed you could find all the setup here in this url by searching their name list above : `https://www.npmjs.com/`
+-[1] For Code that got as error we fixed it in the website by asking question and see asked question answers : `https://stackoverflow.com/`
+
+-[2] for any dependencies installed you could find all the setup here in this url by searching their name list above : `https://www.npmjs.com/`
 
 - for the chat referenced from this youtube video : `https://www.youtube.com/watch?v=HggSXt1Hzfk&list=PLj-4DlPRT48lXaz5YLvbLC38m25W9Kmqy&index=4`
 
@@ -78,132 +80,127 @@ Balemoya
 
 #### Organization
 
-![](c:/Users/Fat-Albert/Pictures/Registre_Company.PNG)
+<img src="/screenShots/Registre_Company.PNG" width="210">
 
 #### individual
 
-![](c:/Users/Fat-Albert/Pictures/Register_Individual.PNG)
+<img src="/screenShots/Register_Individual.PNG" width="210">
 
 ### Login
 
 #### Individual
 
-![](c:/Users/Fat-Albert/Pictures/login-empolyee.PNG)
+<img src="/screenShots/login-empolyee.PNG" width="210">
 
 ##### Update Individual Profile
 
 - In This profile I am show the password because am trying to show that the password are hashed.
-  ![](c:/Users/Fat-Albert/Pictures/profile.PNG)
+  <img src="/screenShots/profile.PNG" width="210">
 
 ##### Update changePassword
 
-![](c:/Users/Fat-Albert/Pictures/ChangePassword_employer.PNG)
+<img src="/screenShots/ChangePassword_employer.PNG" width="210">
 
 ##### ApplyJob
 
-![](c:/Users/Fat-Albert/Pictures/apply.PNG)
+<img src="/screenShots/apply.PNG" width="210">
 
 ##### PerviousExperience
 
-![](c:/Users/Fat-Albert/Pictures/previous%20experience.PNG)
+<img src="/screenShots/previous experience.PNG" width="210">
 
 ##### EducationalBackground
 
-![](c:/Users/Fat-Albert/Pictures/educationbackground.PNG)
+<img src="/screenShots/educationbackground.PNG" width="210">
 
 ##### Reference
 
-![](c:/Users/Fat-Albert/Pictures/reference.PNG)
-
+<img src="/screenShots/reference.PNG" width="210">
 ##### Profession
-
-![](c:/Users/Fat-Albert/Pictures/profession.PNG)
+<img src="/screenShots/profession.PNG" width="210">
 
 ##### Report-Users
 
-![](c:/Users/Fat-Albert/Pictures/report.PNG)
+<img src="/screenShots/report.PNG" width="210">
 
 ##### Get-Verified
 
-![](c:/Users/Fat-Albert/Pictures/get-verified.PNG)
+<img src="/screenShots/get-verified.PNG" width="210">
 
 ##### Reviews
 
-![](c:/Users/Fat-Albert/Pictures/review.PNG)
+<img src="/screenShots/review.PNG" width="210">
 
 #### Organization
 
-![](c:/Users/Fat-Albert/Pictures/Profile_view_employer.PNG)
-
 ##### Update Organization Profile
+
+<img src="/screenShots/Profile_view_employer.PNG " width="210">
 
 - In This profile I am show the password because am trying to show that the password are hashed.
 
-![](c:/Users/Fat-Albert/Pictures/Update_employer_Profile.PNG)
-
 ##### Update changePassword
 
-![](c:/Users/Fat-Albert/Pictures/ChangePassword_employer.PNG)
+<img src="/screenShots/ChangePassword_employer.PNG" width="210">
 
 ##### JobPost
 
-![](c:/Users/Fat-Albert/Pictures/JobPosting_employer.PNG)
+<img src="/screenShots/JobPosting_employer.PNG" width="210">
 
 ###### Update JobPost
 
-![](c:/Users/Fat-Albert/Pictures/updating_jobpost-employer.PNG)
+<img src="/screenShots/updating_jobpost-employer.PNG" width="210">
 
 ###### Delete JobPost
 
-![](c:/Users/Fat-Albert/Pictures/deleting_jobPOost.PNG)
+<img src="/screenShots/deleting_jobPOost.PNG" width="210">
 
 ###### Get single JobPost by created user only
 
-![](c:/Users/Fat-Albert/Pictures/getting_jobPost_off_logged%20in%20user.PNG)
+<img src="/screenShots/getting_jobPost_off_logged in user.PNG" width="210">
 
 #### conversation
 
-![](c:/Users/Fat-Albert/Pictures/conversation.PNG)
+<img src="/screenShots/conversation.PNG" width="210">
 
 #### messaging
 
 - Sender
-  ![](c:/Users/*Fat-Albert/Pictures/messageing%20between%20users.PNG)
+  <img src="/screenShots/messageing between users.PNG" width="210">
 
 - Responder
-
-![](c:/Users/Fat-Albert/Pictures/responder%20messager.PNG)
+  <img src="/screenShots/responder messager.PNG" width="210">
 
 ### Admin
 
 #### Get All Users
 
-![](c:/Users/Fat-Albert/Pictures/get%20all%20user.PNG)
+<img src="/screenShots/get all user.PNG" width="210">
 
 #### Get All JobPosted
 
-![](c:/Users/Fat-Albert/Pictures/get%20all%20jobpost.PNG)
+<img src="/screenShots/getting all jobposted by id.PNG" width="210">
 
 #### Get ID JobPosted
 
-![](c:/Users/Fat-Albert/Pictures/getting%20all%20jobposted%20by%20id.PNG)
+<img src="/screenShots/getting all jobposted by id.PNG" width="210">
 
 #### Banning User
 
-![](c:/Users/Fat-Albert/Pictures/banning%20user.PNG)
+<img src="/screenShots/banning user.PNG" width="210">
 
 #### UnBanning User
 
-![](c:/Users/Fat-Albert/Pictures/unbanning%20user.PNG)
+<img src="/screenShots/unbanning user.PNG" width="210">
 
 #### Delete User
 
-![](c:/Users/Fat-Albert/Pictures/delete%20user.PNG)
+<img src="/screenShots/delete user.PNG" width="210">
 
 #### Verify user
 
-![](c:/Users/Fat-Albert/Pictures/verify.PNG)
+<img src="/screenShots/verify.PNG" width="210">
 
 #### UnVerify User
 
-![](c:/Users/Fat-Albert/Pictures/unverify.PNG)
+<img src="/screenShots/unverify.PNG" width="210">
