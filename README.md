@@ -29,16 +29,19 @@ Balemoya
 - Start the projects : `npm start`
 
 * For the AccountService
-  <>
+  <img src="/screenShots/AccountService.PNG" width="500">
 
 * For the ChatService
   ![](c:/Users/Fat-Albert/Pictures/ChatService.PNG)
+  <img src="/screenShots/ChatService.PNG" width="500">
 
 * For the JobService
   ![](c:/Users/Fat-Albert/Pictures/JobService.PNG)
+  <img src="/screenShots/JobService.PNG" width="500">
 
 * For the Gateway
   ![](c:/Users/Fat-Albert/Pictures/Gateway.PNG)
+  <img src="/screenShots/Gateway.PNG" width="500">
 
 ## Database
 
