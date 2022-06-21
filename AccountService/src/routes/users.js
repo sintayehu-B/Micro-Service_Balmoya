@@ -143,15 +143,18 @@ router.delete("/user", user_auth, async (req, res, next) => {
   }
 });
 
-router.get(
+router.post(
   "/singleUser",
   user_auth,
-  role_auth([roles.ADMIN]),
+  role_auth([roles.EMPLOYEE, roles.EMPLOYER, roles.ADMIN]),
   async (req, res) => {
     try {
-      const user = await User.findById(req.body.user).populate().exec();
-      const { password, ...others } = user._doc;
-      res.status(200).json({ others: others, success: true });
+      const user = await User.findById(req.body.user)
+        .select(["-password"])
+        .populate()
+        .exec();
+      // const { password, ...others } = user._doc;
+      res.status(200).json(user);
     } catch (err) {
       res.status(404).json("no user is found", err);
     }

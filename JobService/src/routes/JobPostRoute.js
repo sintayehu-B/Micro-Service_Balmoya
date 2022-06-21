@@ -149,24 +149,11 @@ router.get("/singlePost/:id", user_auth, async (req, res) => {
   }
 });
 
-// router.get("/postedBy/:id", async (req, res) => {
-//   try {
-//     const post = await JobPost.findById(req.params.id)
-//       .populate("jopAppliedUsers")
-//       .exec();
-
-//     // const { postedBy } = post._doc;
-//     res.status(200).json(post);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 /* This is a get request to get all the posts. */
-router.get("/showJobPosted/byUser", user_auth, async (req, res) => {
+router.post("/showJobPosted/byUser", user_auth, async (req, res) => {
   try {
-    const id = req.user.id;
-    const post = await JobPost.findOne({ postedBy: id })
+    const id = req.body.id;
+    const post = await JobPost.find({ postedBy: id })
       .populate("jopAppliedUsers")
       .exec();
 
@@ -176,18 +163,6 @@ router.get("/showJobPosted/byUser", user_auth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// Get all posts
-/* This is a get request to get all the posts. */
-
-// router.get("/appliedUser", async (req, res) => {
-//   try {
-//     const post = await Job.find().populate("jopAppliedUsers").exec();
-//     res.status(200).json(post);
-//   } catch (err) {
-//     res.status(500).json({ message: "server error", err, err });
-//   }
-// });
 
 /* This is a get request to get all the posts. */
 router.get("/", user_auth, async (req, res) => {

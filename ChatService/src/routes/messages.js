@@ -16,6 +16,7 @@ router.post(
     });
     try {
       const saveMessage = await newMessage.save();
+
       res.status(200).json(saveMessage);
     } catch (err) {
       res.status(500).json({
@@ -36,6 +37,7 @@ router.get(
       const message = await Message.find({
         conversation: req.params.id,
       }).exec();
+      req.io.emit("new message", { content: req.body });
       res.status(200).json(message);
     } catch (err) {
       res.status(500).json({

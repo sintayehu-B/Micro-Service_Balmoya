@@ -15,14 +15,7 @@ const jobPostRoute = require("./src/routes/jobPostRoute");
 const applyJobRoute = require("./src/routes/applyJobRoute");
 const passport = require("passport");
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:5655",
-    methods: "GET,PUT,POST,OPTIONS",
-    allowedHeaders: "Content-Type,Authorization",
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

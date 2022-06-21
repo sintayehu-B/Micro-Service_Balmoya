@@ -6,11 +6,21 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 // dotenv
 const { DB_URI } = require("./src/config");
+// socket
+const { createServer } = require("http");
+const socketIo = require("socket.io");
+const server = createServer(app);
+const io = socketIo(server, { cors: { origin: "*" } }); // you can change the cors to your own domain
+
 // route
 const conversationRoute = require("./src/routes/conversation");
 const messagesRoute = require("./src/routes/messages");
 
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  req.io = io;
+  return next();
+});
 
 mongoose
   .connect(DB_URI)
