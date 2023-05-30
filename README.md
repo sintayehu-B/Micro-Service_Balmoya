@@ -57,9 +57,9 @@ Balemoya
 
 ## Team Members
 
-- Abiy menberu ATR/2705/11
-- Bisrat Fekede ATR/0929/11
-- Dan Mekonnen ATR/8274/11
+
+
+
 - Sintayehu Sermessa ATR/8798/11
 
 ## Advisor
